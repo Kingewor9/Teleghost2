@@ -106,7 +106,22 @@ Tap any name above to visit the Telegram group or channel."""
 5. [Random Facts](https://t.me/teleghost_ads/45/56)
 
 Tap any name above to visit the Telegram group or channel."""
- }
+ },
+{    "categories": "Business & Startup_category",
+        "message": """Here are some top business & startup channels you can explore:
+        
+1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
+2. [Jahxco Tech](https://t.me/teleghost_ads/36/69)
+
+Tap any name above to visit the Telegram group or channel."""
+  },
+{ "categories": "Forex_category",
+        "message": """Here are some top forex channels you can explore:
+        
+1. [Investor Theo Trading Crib](https://t.me/teleghost_ads/3/68)
+
+Tap any name above to visit the Telegram group or channel."""
+}   
 ]
 
 category_messages_collection.insert_many(category_messages)
@@ -224,8 +239,62 @@ if result.modified_count > 0:
 else:
     print("ℹ️ No changes made (message might be already up to date).")
     
-    
+    updated_message =   """Here are some top business & startup channels you can explore:
+        
+1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
+2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
 
+Tap any name above to visit the Telegram group or channel."""
+
+# Update the document
+result = category_messages_collection.update_one(
+    {"categories": "Business & Startup_category"},
+    {"$set": {"message": updated_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Business & Startup message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    updated_message =   """Here are some top business & startup channels you can explore:
+        
+1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
+2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update the document
+result = category_messages_collection.update_one(
+    {"categories": "Business & Startup_category"},
+    {"$set": {"message": updated_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Business & Startup message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    updated_message =   """Here are some top business & startup channels you can explore:
+        
+1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
+2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update the document
+result = category_messages_collection.update_one(
+    {"categories": "Business & Startup_category"},
+    {"$set": {"message": updated_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Business & Startup message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    
+    
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 # Commands
@@ -295,7 +364,7 @@ async def earn(event):
 
 @bot.on(events.NewMessage(pattern='/tutorial'))
 async def tutorial(event):
-    await event.respond("Watch this tutorial to understand how to use the bot: https://youtu.be/cREkAk6I10w?si=WoCDFePTtoaxxF6E")
+    await event.respond("Watch this tutorial to understand how to use the bot: https://youtu.be/cxQdc0OkCuY?si=vw1fUH9oW073LYO2")
 
 @bot.on(events.NewMessage(pattern='/announcement'))
 async def announcement(event):
@@ -304,6 +373,23 @@ async def announcement(event):
 @bot.on(events.NewMessage(pattern='/support'))
 async def support(event):
     await event.respond("Need help? Contact: @mike4ads")
+    
+@bot.on(events.NewMessage(pattern='/affiliate'))
+async def affiliate(event):
+    await event.respond("Coming soon....")  
+    
+@bot.on(events.NewMessage(pattern='/update'))
+async def update(event):
+    await event.respond("Has your channel increased by atleast 500 subscribers? Then update your channel's data on our platform here: https://forms.gle/HCSFirqPGxgAFdHg9") 
+
+@bot.on(events.NewMessage(pattern='/about'))
+async def update(event):
+    await event.respond("Learn more about us here: https://shorturl.at/5nkEZ") 
+    
+@bot.on(events.NewMessage(pattern='/learn'))
+async def update(event):
+    await event.respond("Watch this free video to learn how to build an income generating telegram channel for yourself: https://t.me/LeadGenProo/253")    
+         
 
 print("Bot is running...")
 bot.run_until_disconnected()
