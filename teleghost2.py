@@ -121,7 +121,14 @@ Tap any name above to visit the Telegram group or channel."""
 1. [Investor Theo Trading Crib](https://t.me/teleghost_ads/3/68)
 
 Tap any name above to visit the Telegram group or channel."""
-}   
+},
+{"categories": "Movies_category",
+        "message": """Here are some top movie channels you can explore:
+        
+1. [Filmxin](https://t.me/teleghost_ads/23/71)
+
+Tap any name above to visit the Telegram group or channel."""
+}  
 ]
 
 category_messages_collection.insert_many(category_messages)
@@ -279,6 +286,25 @@ else:
         
 1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
 2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update the document
+result = category_messages_collection.update_one(
+    {"categories": "Business & Startup_category"},
+    {"$set": {"message": updated_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Business & Startup message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    updated_message =   """Here are some top business & startup channels you can explore:
+        
+1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
+2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
+3. [The AED Nation](https://t.me/teleghost_ads/36/72)
 
 Tap any name above to visit the Telegram group or channel."""
 
