@@ -246,6 +246,30 @@ if result.modified_count > 0:
 else:
     print("ℹ️ No changes made (message might be already up to date).")
     
+    updated_message = """Here are some top marketing channels you can explore:
+        
+1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
+2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
+3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
+4. [Faithman | Sales & Marketing](https://t.me/teleghost_ads/5/52)  
+5. [Digital Cash Printing Formular](https://t.me/teleghost_ads/32/51) 
+6. [Financial Freedom in 30 to 90 days](https://t.me/teleghost_ads/5/60)
+7. [Telegram Leads Generation](https://t.me/teleghost_ads/5/73)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update the document
+result = category_messages_collection.update_one(
+    {"categories": "Marketing_category"},
+    {"$set": {"message": updated_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Marketing message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    
     updated_message =   """Here are some top business & startup channels you can explore:
         
 1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
