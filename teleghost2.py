@@ -192,6 +192,7 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 @bot.on(events.NewMessage(pattern='/start'))
 async def start(event):
     chat_id = event.chat_id
+    print(f"📌 New user started: {chat_id}")
 
     # Save chat_id to MongoDB (if not already saved)
     users_collection = db["users"]
