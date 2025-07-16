@@ -362,6 +362,27 @@ if result.modified_count > 0:
 else:
     print("ℹ️ No changes made (message might be already up to date).")
     
+    updated_message =   """Here are some top business & startup channels you can explore:
+        
+1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
+2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
+3. [The AED Nation](https://t.me/teleghost_ads/36/72)
+4. [Home Tech](https://t.me/teleghost_ads/36/74)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update the document
+result = category_messages_collection.update_one(
+    {"categories": "Business & Startup_category"},
+    {"$set": {"message": updated_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Business & Startup message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    
     updated_message = """Here are some top marketing channels you can explore:
         
 1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
