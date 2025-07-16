@@ -1,5 +1,6 @@
 from telethon import TelegramClient, events, Button
 from pymongo import MongoClient
+from pymongo import ReturnDocument
 from bson import ObjectId
 import asyncio
 import math
@@ -10,6 +11,7 @@ import urllib
 API_ID = '23948999'
 API_HASH = '76b1080f07e14bb3f51ba84ff2474319'
 BOT_TOKEN = '7721773520:AAEsP9I2DFvR0LIaY6b-GB-Y3BQlTWM2rvQ'
+ADMIN_USER_ID = '1474715816'
 
 username = 'Kingewor9'
 password = 'Padlock2122@'
@@ -189,7 +191,19 @@ bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 # Commands
 @bot.on(events.NewMessage(pattern='/start'))
 async def start(event):
-    await event.respond("Welcome! Use /advertise to view ad channels, /earn to add your channel, /tutorial for guidance, /announcement for updates, or /support for help.")
+    chat_id = event.chat_id
+
+    # Save chat_id to MongoDB (if not already saved)
+    users_collection = db["users"]
+    users_collection.update_one(
+        {"chat_id": chat_id},
+        {"$set": {"chat_id": chat_id}},
+        upsert=True
+    )
+
+    await event.respond(
+        "Welcome! Use /advertise to view ad channels, /earn to add your channel, /tutorial for guidance, /announcement for updates, or /support for help."
+    )
 
 # Advertise command shows categories
 @bot.on(events.NewMessage(pattern='/advertise'))
@@ -277,8 +291,70 @@ async def update(event):
     
 @bot.on(events.NewMessage(pattern='/learn'))
 async def update(event):
-    await event.respond("Watch this free video to learn how to build an income generating telegram channel for yourself: https://t.me/LeadGenProo/253")    
-         
+    await event.respond("Watch this free video to learn how to build an income generating telegram channel for yourself: https://t.me/LeadGenProo/253")  
+    
+def get_next_broadcast_code():
+    broadcast_counter_collection = db["counters"]
+    result = broadcast_counter_collection.find_one_and_update(
+        {"_id": "broadcast"},
+        {"$inc": {"count": 1}},
+        upsert=True,
+        return_document=ReturnDocument.AFTER
+    )
+    return f"BROADCAST-{result['count']:03d}"
+
+@bot.on(events.NewMessage(pattern=r'^/broadcast (.+)'))
+async def broadcast_handler(event):
+    if event.sender_id != ADMIN_USER_ID:
+        return
+
+    message = event.pattern_match.group(1)
+    broadcast_code = get_next_broadcast_code()  # BROADCAST-001, BROADCAST-002, etc.
+
+    users_collection = db["users"]
+    logs_collection = db["broadcast_logs"]
+    users = users_collection.find()
+    count = 0
+
+    for user in users:
+        try:
+            sent_msg = await bot.send_message(user["chat_id"], message)
+
+            logs_collection.insert_one({
+                "chat_id": user["chat_id"],
+                "message_id": sent_msg.id,
+                "broadcast_code": broadcast_code,
+                "text": message
+            })
+
+            count += 1
+            await asyncio.sleep(0.1)
+        except Exception as e:
+            print(f"Error sending to {user['chat_id']}: {e}")
+
+    await event.respond(f"✅ Broadcast sent to {count} users.\n🆔 Code: `{broadcast_code}`")
+    
+    @bot.on(events.NewMessage(pattern=r'^/deletebroadcast (\w+-\d+)$'))
+    async def delete_broadcast(event):
+     if event.sender_id != ADMIN_USER_ID:
+        return
+
+    code = event.pattern_match.group(1).strip().upper()
+    logs_collection = db["broadcast_logs"]
+
+    logs = logs_collection.find({"broadcast_code": code})
+    count = 0
+
+    for log in logs:
+        try:
+            await bot.delete_messages(log["chat_id"], log["message_id"])
+            count += 1
+        except Exception as e:
+            print(f"Failed to delete from {log['chat_id']}: {e}")
+
+    logs_collection.delete_many({"broadcast_code": code})
+
+    await event.respond(f"🗑 Deleted {count} messages for broadcast `{code}`")
 
 print("Bot is running...")
 bot.run_until_disconnected()
