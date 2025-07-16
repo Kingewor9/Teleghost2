@@ -136,258 +136,8 @@ category_messages_collection.insert_many(category_messages)
 print("Category messages inserted successfully!")
 
 # Define the corrected message
-updated_message = """Here are some top marketing channels you can explore:
-        
-1. Academy of Closing (https://t.me/teleghost_ads/5/48)  
-2. Tiktok Leads Generation (https://t.me/teleghost_ads/5/49)  
-3. Digital Nomad Academy (https://t.me/teleghost_ads/5/50)  
-4. Faithman | Sales & Marketing (https://t.me/teleghost_ads/5/52)  
-5. Digital Cash Printing Formular (https://t.me/teleghost_ads/32/51)  
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    # Define the corrected message
-updated_message = """Here are some top marketing channels you can explore:
-        
-1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
-2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
-3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
-4. [Faithman | Sales & Marketinga](https://t.me/teleghost_ads/5/52)  
-5. [Digital Cash Printing Formulr](https://t.me/teleghost_ads/32/51)  
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    # Define the corrected message
-updated_message = """Here are some top marketing channels you can explore:
-        
-1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
-2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
-3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
-4. [Faithman | Sales & Marketing](https://t.me/teleghost_ads/5/52)  
-5. [Digital Cash Printing Formular](https://t.me/teleghost_ads/32/51)  
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    
-    updated_message = """Here are some top marketing channels you can explore:
-        
-1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
-2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
-3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
-4. [Faithman | Sales & Marketing](https://t.me/teleghost_ads/5/52)  
-5. [Digital Cash Printing Formular](https://t.me/teleghost_ads/32/51) 
-6. [Financial Freedom in 30 - 90 days](https://t.me/teleghost_ads/5/60)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message = """Here are some top marketing channels you can explore:
-        
-1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
-2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
-3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
-4. [Faithman | Sales & Marketing](https://t.me/teleghost_ads/5/52)  
-5. [Digital Cash Printing Formular](https://t.me/teleghost_ads/32/51) 
-6. [Financial Freedom in 30 to 90 days](https://t.me/teleghost_ads/5/60)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message = """Here are some top marketing channels you can explore:
-        
-1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
-2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
-3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
-4. [Faithman | Sales & Marketing](https://t.me/teleghost_ads/5/52)  
-5. [Digital Cash Printing Formular](https://t.me/teleghost_ads/32/51) 
-6. [Financial Freedom in 30 to 90 days](https://t.me/teleghost_ads/5/60)
-7. [Telegram Leads Generation](https://t.me/teleghost_ads/5/73)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    
-    updated_message = """Here are some top marketing channels you can explore:
-        
-1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
-2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
-3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
-4. [Faithman | Sales & Marketing](https://t.me/teleghost_ads/5/52)  
-5. [Digital Cash Printing Formular](https://t.me/teleghost_ads/32/51) 
-6. [Financial Freedom in 30 to 90 days](https://t.me/teleghost_ads/5/60)
-7. [Telegram Leads Generation](https://t.me/teleghost_ads/5/73)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    
-    
-    updated_message =   """Here are some top business & startup channels you can explore:
-        
-1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
-2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Business & Startup_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Business & Startup message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message =   """Here are some top business & startup channels you can explore:
-        
-1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
-2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Business & Startup_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Business & Startup message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message =   """Here are some top business & startup channels you can explore:
-        
-1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
-2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Business & Startup_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Business & Startup message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message =   """Here are some top business & startup channels you can explore:
-        
-1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
-2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
-3. [The AED Nation](https://t.me/teleghost_ads/36/72)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Business & Startup_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Business & Startup message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message =   """Here are some top business & startup channels you can explore:
-        
-1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
-2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
-3. [The AED Nation](https://t.me/teleghost_ads/36/72)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Business & Startup_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Business & Startup message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message =   """Here are some top business & startup channels you can explore:
+# BUSINESS & STARTUP message
+business_startup_message = """Here are some top business & startup channels you can explore:
         
 1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
 2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
@@ -396,39 +146,20 @@ else:
 
 Tap any name above to visit the Telegram group or channel."""
 
-# Update the document
+# Update Business & Startup
 result = category_messages_collection.update_one(
     {"categories": "Business & Startup_category"},
-    {"$set": {"message": updated_message}}
+    {"$set": {"message": business_startup_message}}
 )
 
 if result.modified_count > 0:
     print("✅ Business & Startup message updated successfully.")
 else:
     print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message =   """Here are some top business & startup channels you can explore:
-        
-1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
-2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
-3. [The AED Nation](https://t.me/teleghost_ads/36/72)
-4. [Home Tech](https://t.me/teleghost_ads/36/74)
 
-Tap any name above to visit the Telegram group or channel."""
 
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Business & Startup_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Business & Startup message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    
-    updated_message = """Here are some top marketing channels you can explore:
+# MARKETING message
+marketing_message = """Here are some top marketing channels you can explore:
         
 1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
 2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
@@ -440,33 +171,10 @@ else:
 
 Tap any name above to visit the Telegram group or channel."""
 
-# Update the document
+# Update Marketing
 result = category_messages_collection.update_one(
     {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
-)
-
-if result.modified_count > 0:
-    print("✅ Marketing message updated successfully.")
-else:
-    print("ℹ️ No changes made (message might be already up to date).")
-    
-    updated_message = """Here are some top marketing channels you can explore:
-        
-1. [Academy of Closing](https://t.me/teleghost_ads/5/48)  
-2. [Tiktok Leads Generation](https://t.me/teleghost_ads/5/49)  
-3. [Digital Nomad Academy](https://t.me/teleghost_ads/5/50)  
-4. [Faithman | Sales & Marketing](https://t.me/teleghost_ads/5/52)  
-5. [Digital Cash Printing Formular](https://t.me/teleghost_ads/32/51) 
-6. [Financial Freedom in 30 to 90 days](https://t.me/teleghost_ads/5/60)
-7. [Telegram Leads Generation](https://t.me/teleghost_ads/5/73)
-
-Tap any name above to visit the Telegram group or channel."""
-
-# Update the document
-result = category_messages_collection.update_one(
-    {"categories": "Marketing_category"},
-    {"$set": {"message": updated_message}}
+    {"$set": {"message": marketing_message}}
 )
 
 if result.modified_count > 0:
