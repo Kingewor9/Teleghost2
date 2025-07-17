@@ -184,6 +184,26 @@ if result.modified_count > 0:
 else:
     print("ℹ️ No changes made (message might be already up to date).")
     
+    # FOREX message
+forex_message = """Here are some top forex channels you can explore:
+        
+1. [Investor Theo Trading Crib](https://t.me/teleghost_ads/3/68)
+2. [Alpha Trades KE](https://t.me/teleghost_ads/3/75)
+
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update Marketing
+result = category_messages_collection.update_one(
+    {"categories": "Forex_category"},
+    {"$set": {"message": forex_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Forex message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
     
     
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
