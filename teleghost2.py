@@ -205,6 +205,49 @@ else:
     print("ℹ️ No changes made (message might be already up to date).")
     
     
+    # BUSINESS & STARTUP message
+business_startup_message = """Here are some top business & startup channels you can explore:
+        
+1. [Messiah Bootcamp](https://t.me/teleghost_ads/36/69)
+2. [Jahxco Tech](https://t.me/teleghost_ads/36/70)
+3. [The AED Nation](https://t.me/teleghost_ads/36/72)
+4. [Home Tech](https://t.me/teleghost_ads/36/74)
+5. [Income Generators](https://t.me/teleghost_ads/36/77)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update Business & Startup
+result = category_messages_collection.update_one(
+    {"categories": "Business & Startup_category"},
+    {"$set": {"message": business_startup_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Business & Startup message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    
+        # Movies message
+Movies_message = """Here are some top movies channels you can explore:
+        
+1. [Filmxin](https://t.me/teleghost_ads/23/71)
+2. [Nollywood Movies](https://t.me/teleghost_ads/23/76)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update movies
+result = category_messages_collection.update_one(
+    {"categories": "Movies_category"},
+    {"$set": {"message": Movies_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Movies message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    
     
 bot = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
