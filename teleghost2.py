@@ -130,7 +130,14 @@ Tap any name above to visit the Telegram group or channel."""
 1. [Filmxin](https://t.me/teleghost_ads/23/71)
 
 Tap any name above to visit the Telegram group or channel."""
-}  
+}, 
+{"categories": "Sports_category",
+        "message": """Here are some top sports channels you can explore:
+        
+1. [Manchester United ⚽💯](https://t.me/teleghost_ads/16/78)
+
+Tap any name above to visit the Telegram group or channel."""
+}
 ]
 
 category_messages_collection.insert_many(category_messages)
