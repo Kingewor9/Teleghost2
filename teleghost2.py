@@ -137,6 +137,13 @@ Tap any name above to visit the Telegram group or channel."""
 1. [Manchester United ⚽💯](https://t.me/teleghost_ads/16/78)
 
 Tap any name above to visit the Telegram group or channel."""
+},
+{"categories": "Memes_category",
+        "message": """Here are some top memes channels you can explore:
+        
+1. [Tweet Savages](https://t.me/teleghost_ads/39/80)
+
+Tap any name above to visit the Telegram group or channel."""
 }
 ]
 
@@ -240,6 +247,27 @@ Movies_message = """Here are some top movies channels you can explore:
         
 1. [Filmxin](https://t.me/teleghost_ads/23/71)
 2. [Nollywood Movies](https://t.me/teleghost_ads/23/76)
+
+Tap any name above to visit the Telegram group or channel."""
+
+# Update movies
+result = category_messages_collection.update_one(
+    {"categories": "Movies_category"},
+    {"$set": {"message": Movies_message}}
+)
+
+if result.modified_count > 0:
+    print("✅ Movies message updated successfully.")
+else:
+    print("ℹ️ No changes made (message might be already up to date).")
+    
+    
+            # Movies message
+Movies_message = """Here are some top movies channels you can explore:
+        
+1. [Filmxin](https://t.me/teleghost_ads/23/71)
+2. [Nollywood Movies](https://t.me/teleghost_ads/23/76)
+3. [Movies Hub](https://t.me/teleghost_ads/23/79)
 
 Tap any name above to visit the Telegram group or channel."""
 
